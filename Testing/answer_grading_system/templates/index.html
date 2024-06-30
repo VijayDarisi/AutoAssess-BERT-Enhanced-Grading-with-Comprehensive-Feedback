@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Answer Grading System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron text-center mt-5">
+            <h1 class="display-4">Answer Grading System</h1>
+            <p class="lead">Efficient and accurate grading system using advanced AI techniques.</p>
+            <p>Welcome to our answer grading system. This platform helps students and faculty to easily grade and analyze answers using semantic analysis with BERT.</p>
+            <div class="mt-5">
+                <a href="{{ url_for('student') }}" class="btn btn-primary btn-lg m-3">Student Assignment Checking</a>
+                <a href="{{ url_for('faculty') }}" class="btn btn-secondary btn-lg m-3">Faculty Correction</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
