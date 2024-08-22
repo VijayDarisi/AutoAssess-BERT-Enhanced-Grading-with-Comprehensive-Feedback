@@ -3,33 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faculty Correction</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Faculty - Answer Grading System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="container">
-        <div class="jumbotron text-center mt-5">
-            <h1 class="display-4">Faculty Correction</h1>
-            <p class="lead">Upload the questions, answer key, and student answers to get a similarity score.</p>
-        </div>
-        <form action="{{ url_for('upload_faculty') }}" method="post" enctype="multipart/form-data" class="mt-5">
-            <div class="mb-3">
-                <label for="questions" class="form-label">Questions</label>
-                <input class="form-control" type="file" id="questions" name="questions" required>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-8">
+        <h1 class="text-3xl font-bold mb-8">Faculty Question and Answer Upload</h1>
+        <form action="{{ url_for('upload_faculty') }}" method="post" enctype="multipart/form-data" class="space-y-4">
+            <div>
+                <label for="questions" class="block text-lg font-medium">Questions PDF:</label>
+                <input type="file" name="questions" id="questions" class="mt-2">
             </div>
-            <div class="mb-3">
-                <label for="answer_key" class="form-label">Answer Key</label>
-                <input class="form-control" type="file" id="answer_key" name="answer_key" required>
+            <div>
+                <label for="answer_key" class="block text-lg font-medium">Answer Key PDF:</label>
+                <input type="file" name="answer_key" id="answer_key" class="mt-2">
             </div>
-            <div class="mb-3">
-                <label for="student_answers" class="form-label">Student Answers</label>
-                <input class="form-control" type="file" id="student_answers" name="student_answers" required>
+            <div>
+                <label for="student_answers" class="block text-lg font-medium">Student Answers PDF:</label>
+                <input type="file" name="student_answers" id="student_answers" class="mt-2">
             </div>
-            <button type="submit" class="btn btn-primary">Upload</button>
+            <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded">Upload and Grade</button>
         </form>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
